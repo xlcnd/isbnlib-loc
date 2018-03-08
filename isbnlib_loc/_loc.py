@@ -87,6 +87,6 @@ def query(isbn):
     data = wquery(
         SERVICE_URL.format(isbn=isbn), user_agent=UA, parser=parser_loc)
     if not data:  # pragma: no cover
-        LOGGER.debug('No data from LoC (Library of Congress) for isbn %s', isbn)
+        LOGGER.debug('No data from LoC for isbn %s', isbn)
         return {}
     return _mapper(isbn, data)
