@@ -1,0 +1,45 @@
+sudo: false
+language: python
+branches:
+    only:
+    - dev
+    - v0.0.1
+matrix:
+    include:
+    - os: osx
+      language: generic
+      env: TOXENV=py36
+    - python: "2.7"
+      env: TOXENV=py27
+    - python: "3.6"
+      env: TOXENV=py36
+    - python: "3.5"
+      env: TOXENV=py35
+    - python: "3.4"
+      env: TOXENV=py34
+    - python: "nightly"
+      env: TOXENV=nightly
+    - python: "2.7"
+      env: TOXENV=checkers
+    allow_failures:
+    - env: TOXENV=nightly
+    - env: TOXENV=py34
+    - env: TOXENV=checkers
+install:
+- if [[ $TRAVIS_OS_NAME == 'osx' ]]; then brew upgrade python; fi
+- if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install tox; fi
+- if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install -r requirements.txt; fi
+- if [[ $TRAVIS_OS_NAME == 'linux' ]]; then pip install tox; fi
+- if [[ $TRAVIS_OS_NAME == 'linux' ]]; then pip install -r requirements.txt; fi
+- if [[ $TOXENV == 'checkers' ]]; then pip install -r requirements.txt; fi
+- if [[ $TOXENV == 'checkers' ]]; then pip install flake8; fi
+- if [[ $TOXENV == 'checkers' ]]; then pip install pep8-naming; fi
+- if [[ $TOXENV == 'py27' ]]; then pip install coveralls; fi
+- if [[ $TRAVIS_PULL_REQUEST != 'false' ]]; then pip install yapf; fi
+script:
+- if [[ $TRAVIS_PULL_REQUEST != 'false' ]] && [[ $TOXENV == 'checkers' ]]; then yapf -i isbnlib_loc; fi
+- if [[ ! -z $TOXENV ]]; then tox -e $TOXENV; fi
+after_success:
+- if [[ $TOXENV == 'py27' ]]; then coveralls; fi
+notifications:
+  email: false
