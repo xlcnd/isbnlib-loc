@@ -31,6 +31,13 @@ def _clean_title(title):
     return title.strip(':.,; ')
 
 
+def _clean_publisher(publisher):
+    """Clean the Publisher field of some unnecessary annotations."""
+    publisher = publisher.replace(' ; ', '; ').replace('/', '')\
+        .replace(' :', ':')
+    return publisher.strip(':.,; ')
+
+
 def _clean_author(author):
     """Clean the Author field of some unnecessary annotations."""
     author = author.replace('author', '').replace(' :', ':')\
@@ -57,7 +64,8 @@ def parser_loc(xml):
             txt = '|'.join([_get_text(node) for node in nodes])
             recs[key] = u(txt)
         # cleanning
-        recs['Publisher'] = recs['Publisher'].split('|')[0]
+        publisher = recs['Publisher'].split('|')[0]
+        recs['Publisher'] = _clean_publisher(publisher)
         authors = recs['Authors'].split('|')
         recs['Authors'] = [_clean_author(author) for author in authors]
         recs['Year'] = u(''.join(c for c in recs['Year'] if c.isdigit())[:4])
