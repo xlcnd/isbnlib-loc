@@ -1,2 +1,2 @@
 v0.0.1, 2018-03-09 -- Initial beta release.
-v0.0.2, 2018-03-09 -- TENTATIVE
+v0.0.2, 2018-03-08 -- Use isbnlib-3.9.
