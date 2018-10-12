@@ -33,8 +33,9 @@ def _clean_title(title):
 
 def _clean_publisher(publisher):
     """Clean the Publisher field of some unnecessary annotations."""
-    publisher = publisher.replace(' ; ', '; ').replace('/', '')\
-        .replace(' :', ':')
+    if ":" in publisher:
+        publisher = publisher.split(':')[1]
+    publisher = publisher.replace(' ; ', '; ').replace('/', '')
     return publisher.strip(':.,; ')
 
 
@@ -44,6 +45,8 @@ def _clean_author(author):
         .split('/')[0].split(';')[0]
     if '(' in author:
         author = author.split(')')[0] + ')'
+    if '-' in author:
+        author = author.split('-')[0][:-4]
     return author.strip(':.,; ')
 
 
