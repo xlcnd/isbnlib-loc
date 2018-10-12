@@ -3,9 +3,7 @@ A metadata plugin for [isbnlib](https://pypi.python.org/pypi/isbnlib) using the 
 After install, a new metadata provider (`loc`) is available in `isbnlib`.
 
 
-**WARNING** this software is at beta level!
-
-Give it a try with:
+Install with:
 
 ```bash
 $ pip install isbnlib-loc
