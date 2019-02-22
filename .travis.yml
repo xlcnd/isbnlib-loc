@@ -17,7 +17,7 @@ matrix:
       env: TOXENV=py35
     - python: "nightly"
       env: TOXENV=nightly
-    - python: "2.7"
+    - python: "3.5"
       env: TOXENV=checkers
     allow_failures:
     - env: TOXENV=nightly
