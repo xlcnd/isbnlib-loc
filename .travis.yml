@@ -15,15 +15,12 @@ matrix:
       env: TOXENV=py36
     - python: "3.5"
       env: TOXENV=py35
-    - python: "3.4"
-      env: TOXENV=py34
     - python: "nightly"
       env: TOXENV=nightly
     - python: "2.7"
       env: TOXENV=checkers
     allow_failures:
     - env: TOXENV=nightly
-    - env: TOXENV=py34
 install:
 - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install tox; fi
 - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then pip3 install -r requirements.txt; fi
