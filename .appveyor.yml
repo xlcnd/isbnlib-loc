@@ -1,6 +1,7 @@
 version: '0.0.4.{build}'
 branches:
   only:
+    - dev
     - /v0.0.4/
 environment:
   matrix:
@@ -14,12 +15,6 @@ environment:
       TOXPYTHON: "C:\\Python35-x64\\python.exe"
       PYTHON_HOME: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5"
-      PYTHON_ARCH: "64"
-
-    - TOXENV: "py34"
-      TOXPYTHON: "C:\\Python34-x64\\python.exe"
-      PYTHON_HOME: "C:\\Python34-x64"
-      PYTHON_VERSION: "3.4"
       PYTHON_ARCH: "64"
 
     - TOXENV: "py27"
