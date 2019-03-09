@@ -54,7 +54,7 @@ def parser_loc(xml):
     """Parse the response from the LoC (Library of Congress) service (US)."""
     # handle special case
     if 'database denied' in xml:
-        LOGGER.debug('LoC is dening access! Try later.')
+        LOGGER.debug('LoC is denying access! Try later.')
         return {}
     if 'numberOfRecords>0<' in xml:
         return {}
@@ -89,6 +89,7 @@ def _mapper(isbn, records):
     """
     # handle special case
     if not records:  # pragma: no cover
+        LOGGER.debug('No data from LoC for isbn %s', isbn)
         return {}
     # add ISBN-13
     records['ISBN-13'] = u(isbn)
@@ -100,7 +101,4 @@ def query(isbn):
     """Query the LoC Library of Congress service for metadata."""
     data = wquery(
         SERVICE_URL.format(isbn=isbn), user_agent=UA, parser=parser_loc)
-    if not data:  # pragma: no cover
-        LOGGER.debug('No data from LoC for isbn %s', isbn)
-        return {}
     return _mapper(isbn, data)
