@@ -53,6 +53,9 @@ def _clean_author(author):
 def parser_loc(xml):
     """Parse the response from the LoC (Library of Congress) service (US)."""
     # handle special case
+    if 'database denied' in xml:
+        LOGGER.debug('LoC is dening access! Try later.')
+        return {}
     if 'numberOfRecords>0<' in xml:
         return {}
     # parse xml and extract canonical fields (Dublin Core)
