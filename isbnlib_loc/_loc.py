@@ -77,8 +77,8 @@ def parser_loc(xml):
         recs['Year'] = u(''.join(c for c in recs['Year'] if c.isdigit())[:4])
         recs['Title'] = _clean_title(recs['Title'])
         recs['Language'] = recs['Language'].split('|')[0]
-    except IndexError:
-        LOGGER.debug('Check the parsing for LoC (possible error!)')
+    except Exception as exc:
+        LOGGER.debug('Check the parsing for LoC (%r)', exc, exc_info=True)
     return recs
 
 
