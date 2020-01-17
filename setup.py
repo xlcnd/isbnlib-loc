@@ -30,7 +30,7 @@ setup(
     download_url='https://github.com/xlcnd/isbnlib-loc/archive/v0.0.4.zip',
     packages=['isbnlib_loc/'],
     entry_points={'isbnlib.metadata': ['loc=isbnlib_loc:query']},
-    install_requires=["isbnlib>=3.9.1,<3.10.0"],
+    install_requires=["isbnlib>=3.9.1,<3.11.0"],
     license='LGPL v3',
     description='A plugin for isbnlib that pulls metadata from LoC (Library of Congress US).',
     long_description=open('README.rst').read(),
