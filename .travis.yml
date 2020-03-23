@@ -21,9 +21,7 @@ matrix:
       env: TOXENV=checkers
     - python: "3.6"
       env: ENV=dev
-    - dist: xenial
-      language: python
-      python: 3.7
+    - python: "3.7"
       env: TOXENV=py37
   allow_failures:
     - env: TOXENV=nightly
