@@ -1,8 +1,8 @@
-version: '1.0.0.{build}'
+version: '1.0.1.{build}'
 branches:
   only:
     - dev
-    - /v1.0.0/
+    - /v1.0.1/
 environment:
   matrix:
     - TOXENV: "py36"

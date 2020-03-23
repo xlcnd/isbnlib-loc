@@ -3,3 +3,4 @@ v0.0.2, 2018-07-17 -- Use isbnlib-3.9.
 v0.0.3, 2018-10-12 -- Cleaner 'authors' field.
 v0.0.4, 2020-01-17 -- (NOT RELEASED).
 v1.0.0, 2020-03-23 -- allow isbnlib-3.10.*.
+v1.0.1, 2020-03-23 -- TENTATIVE
