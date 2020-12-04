@@ -27,7 +27,7 @@ setup(
     author='xlcnd',
     author_email='xlcnd@outlook.com',
     url='https://github.com/xlcnd/isbnlib-loc',
-    download_url='https://github.com/xlcnd/isbnlib-loc/archive/v0.0.4.zip',
+    download_url='https://github.com/xlcnd/isbnlib-loc/archive/v%s.zip' % version,
     packages=['isbnlib_loc/'],
     entry_points={'isbnlib.metadata': ['loc=isbnlib_loc:query']},
     install_requires=["isbnlib>=3.9.1,<3.11.0"],
