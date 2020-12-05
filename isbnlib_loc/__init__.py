@@ -3,7 +3,7 @@
 # pylint: skip-file
 from ._loc import query
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 __plugin_author__ = 'xlcnd'
 __plugin_description__ = 'Metadata for books from Library of Congress'
