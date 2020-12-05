@@ -38,7 +38,7 @@ install:
 script:
   - if [[ $TRAVIS_PULL_REQUEST != 'false' ]] && [[ $TOXENV == 'checkers' ]]; then yapf -i isbnlib_loc; fi
   - if [[ ! -z $TOXENV ]]; then tox -e $TOXENV; fi
-  - if [[ $ENV == 'dev' ]]; then tox -e py36 -c tox-dev.ini; fi
+  - if [[ $ENV == 'dev' ]]; then tox -e py38 -c tox-dev.ini; fi
 after_success:
   - if [[ $TOXENV == 'py37' ]]; then coveralls; fi
 notifications:
