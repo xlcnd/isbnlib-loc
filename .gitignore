@@ -110,4 +110,9 @@ TODO
 LAB/
 .vscode
 .changelog*
+.editorconfig
+.project
+.style*
+.yam*
+.gitignore
 
