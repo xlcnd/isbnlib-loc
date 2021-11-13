@@ -4,4 +4,4 @@ v0.0.3, 2018-10-12 -- Cleaner 'authors' field.
 v0.0.4, 2020-01-17 -- (NOT RELEASED).
 v1.0.0, 2020-03-23 -- allow isbnlib-3.10.*.
 v1.0.1, 2020-12-05 -- fix download url.
-v1.0.2, 2020-12-05 -- TENTATIVE
+v1.0.2, 2020-12-05 -- switch to pytest and Require isbnlib-3.10.9+.
