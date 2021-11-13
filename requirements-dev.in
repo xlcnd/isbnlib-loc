@@ -5,7 +5,8 @@ flake8-commas
 flake8-docstrings
 flake8-import-order
 isort
-nose
+pytest
+pytest-cov
 pep8-naming
 tox
 wheel
