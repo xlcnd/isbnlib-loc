@@ -15,6 +15,13 @@
 
 A metadata plugin for ``isbnlib`` (https://pypi.python.org/pypi/isbnlib) using the service LoC (Library of Congress US).
 
+To install, from the command line, enter (in some cases you have to precede the command with ``sudo``):
+
+
+.. code-block:: bash
+
+    $ pip install isbnlib-loc
+
 After install, a new metadata provider (``loc``) is available in isbnlib.
 
 For available plugins check_ here.
